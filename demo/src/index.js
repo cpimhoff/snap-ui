@@ -88,13 +88,15 @@ class Demo extends Component {
       </Box>
 
       <h3>Dropdown</h3>
-      <Box padding={3} borderWidth={1} borderRadius={3} style={{maxWidth: '20em'}}>
-        Select a country...
-      </Box>
-      <VStack borderRadius={3} borderWidth={1} style={{maxWidth: '20em'}}>
-        <Box bgColor='lightgray'>USA</Box>
-        <Box bgColor='lightgray'>Brazil</Box>
-        <Box bgColor='lightgray'>Canada</Box>
+      <VStack>
+        <Box padding={3} borderWidth={1} borderRadius={3} style={{maxWidth: '20em'}}>
+          Select a country...
+        </Box>
+        <VStack borderRadius={3} borderWidth={1} style={{maxWidth: '20em'}}>
+          <Box bgColor='lightgray'>USA</Box>
+          <Box bgColor='lightgray'>Brazil</Box>
+          <Box bgColor='lightgray'>Canada</Box>
+        </VStack>
       </VStack>
 
     </div>

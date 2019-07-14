@@ -14,8 +14,8 @@ export function Box({
     shadow,
     style,
 }) {
-    const paddings = unpackPadding(padding);
-    const borderRadii = unpackBorderRadii(borderRadius);
+    const paddings = unpackPadding(padding) || {};
+    const borderRadii = unpackBorderRadii(borderRadius) || {};
     const boxShadow = unpackShadow(shadow);
 
     return <div style={{
@@ -64,7 +64,7 @@ export function WrapBox({children, ...props}) {
 
     const Child = childrenArray[0];
     if (Child.type) {
-        return React.cloneElement(Child, {...props});
+        return React.cloneElement(Child, {...props, ...Child.props});
     } else {
         return <Box children={children} {...props} />
     }
