@@ -51,7 +51,7 @@ class Demo extends Component {
 
         <Spacer v={10} />
 
-        <RStack borderRadius={3}>
+        <RStack borderRadius={3} fill>
           <SimpleBox bgColor="blue">This is a responsive stack</SimpleBox>
           <SimpleBox bgColor="red">Resize the screen, it will break</SimpleBox>
           <SimpleBox bgColor="green">
@@ -86,38 +86,37 @@ class Demo extends Component {
           <Box padding={10} borderRadius={5} bgColor="white" shadow>
             Centered
           </Box>
-          <Spacer h={15} />
+          <Spacer h={30} />
           <Box padding={15} borderRadius={5} bgColor="white" shadow>
             Centered
           </Box>
         </HStack>
 
         <h3>Navigation</h3>
-        <Box bgColor="lightblue">
-          <RStack layout={StackLayout.start}>
-            <SimpleBox>App.com</SimpleBox>
-            <Spacer />
-            <SimpleBox>About Us</SimpleBox>
-            <SimpleBox>Pricing</SimpleBox>
-            <SimpleBox>Overview</SimpleBox>
-            <SimpleBox>Log In</SimpleBox>
-          </RStack>
-        </Box>
+        <RStack bgColor="lightblue">
+          <SimpleBox>App.com</SimpleBox>
+          <Spacer />
+          <SimpleBox>About Us</SimpleBox>
+          <SimpleBox>Pricing</SimpleBox>
+          <SimpleBox>Overview</SimpleBox>
+          <SimpleBox>Log In</SimpleBox>
+        </RStack>
 
         <h3>Dropdown</h3>
         <VStack>
-          <Box
-            padding={3}
-            borderWidth={1}
-            borderRadius={3}
-            style={{maxWidth: '20em'}}
-          >
+          <Box padding={3} borderWidth={1} borderRadius={3} width={200}>
             Select a country...
           </Box>
-          <VStack borderRadius={3} borderWidth={1} style={{maxWidth: '20em'}}>
-            <Box bgColor="lightgray">USA</Box>
-            <Box bgColor="lightgray">Brazil</Box>
-            <Box bgColor="lightgray">Canada</Box>
+          <VStack
+            bgColor="lightgray"
+            borderRadius={3}
+            borderWidth={1}
+            width={200}
+            padding={3}
+          >
+            <Box>USA</Box>
+            <Box>Brazil</Box>
+            <Box>Canada</Box>
           </VStack>
         </VStack>
       </div>

@@ -27,6 +27,9 @@ function Stack({
   align = StackAlign.stretched,
   wrappedLayout = StackLayout.start,
   wrap = false,
+  fill = false,
+  width,
+  height,
   ...rest
 }) {
   const borderRadii = unpackBorderRadii(borderRadius);
@@ -51,7 +54,13 @@ function Stack({
       }
     }
 
-    return <WrapBox borderRadius={childBorderRadii}>{child}</WrapBox>;
+    return (
+      <WrapBox
+        borderRadius={childBorderRadii}
+        flexGrow={fill && 1}
+        children={child}
+      />
+    );
   });
 
   return (
@@ -81,6 +90,8 @@ function Stack({
         flexWrap: wrap ? 'wrap' : 'nowrap',
       }}
       borderRadius={borderRadius}
+      maxWidth={width}
+      maxHeight={height}
       {...rest}
     >
       {boxedChildren}

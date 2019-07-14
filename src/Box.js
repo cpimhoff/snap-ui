@@ -13,6 +13,7 @@ export function Box({
   borderRadius,
   shadow,
   style,
+  ...rest
 }) {
   const paddings = unpackPadding(padding) || {};
   const borderRadii = unpackBorderRadii(borderRadius) || {};
@@ -26,10 +27,10 @@ export function Box({
         backgroundColor: bgColor,
         borderStyle: borderWidth && 'solid',
         borderWidth,
-        borderColor,
         ...borderRadii,
         boxShadow,
         ...style,
+        ...rest,
       }}
     >
       {children}
