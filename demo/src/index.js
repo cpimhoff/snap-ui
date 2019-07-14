@@ -12,7 +12,7 @@ import {
 } from '../../src';
 
 const SimpleBox = props => (
-  <Box padding={10} textColor={props.bgColor && 'white'} {...props} />
+  <Box padding={10} textColor={props.backgroundColor && 'white'} {...props} />
 );
 
 class Demo extends Component {
@@ -36,25 +36,25 @@ class Demo extends Component {
 
         <h2>Stacks</h2>
         <HStack borderRadius={3}>
-          <SimpleBox bgColor="blue">Blue</SimpleBox>
-          <SimpleBox bgColor="red">Red</SimpleBox>
-          <SimpleBox bgColor="green">Green</SimpleBox>
+          <SimpleBox backgroundColor="blue">Blue</SimpleBox>
+          <SimpleBox backgroundColor="red">Red</SimpleBox>
+          <SimpleBox backgroundColor="green">Green</SimpleBox>
         </HStack>
 
         <Spacer v={10} />
 
         <VStack borderRadius={3}>
-          <SimpleBox bgColor="blue">Blue</SimpleBox>
-          <SimpleBox bgColor="red">Red</SimpleBox>
-          <SimpleBox bgColor="green">Green</SimpleBox>
+          <SimpleBox backgroundColor="blue">Blue</SimpleBox>
+          <SimpleBox backgroundColor="red">Red</SimpleBox>
+          <SimpleBox backgroundColor="green">Green</SimpleBox>
         </VStack>
 
         <Spacer v={10} />
 
         <RStack borderRadius={3} fill>
-          <SimpleBox bgColor="blue">This is a responsive stack</SimpleBox>
-          <SimpleBox bgColor="red">Resize the screen, it will break</SimpleBox>
-          <SimpleBox bgColor="green">
+          <SimpleBox backgroundColor="blue">This is a responsive stack</SimpleBox>
+          <SimpleBox backgroundColor="red">Resize the screen, it will break</SimpleBox>
+          <SimpleBox backgroundColor="green">
             into a vertical layout on mobile
           </SimpleBox>
         </RStack>
@@ -77,23 +77,23 @@ class Demo extends Component {
         <HStack
           layout={StackLayout.centered}
           align={StackAlign.baseline}
-          bgColor="lightgreen"
+          backgroundColor="lightgreen"
           padding={10}
         >
-          <Box padding={5} borderRadius={5} bgColor="white" shadow>
+          <Box padding={5} borderRadius={5} backgroundColor="white" shadow>
             Centered
           </Box>
-          <Box padding={10} borderRadius={5} bgColor="white" shadow>
+          <Box padding={10} borderRadius={5} backgroundColor="white" shadow>
             Centered
           </Box>
           <Spacer h={30} />
-          <Box padding={15} borderRadius={5} bgColor="white" shadow>
+          <Box padding={15} borderRadius={5} backgroundColor="white" shadow>
             Centered
           </Box>
         </HStack>
 
         <h3>Navigation</h3>
-        <RStack bgColor="lightblue">
+        <RStack backgroundColor="lightblue">
           <SimpleBox>App.com</SimpleBox>
           <Spacer />
           <SimpleBox>About Us</SimpleBox>
@@ -108,7 +108,7 @@ class Demo extends Component {
             Select a country...
           </Box>
           <VStack
-            bgColor="lightgray"
+            backgroundColor="lightgray"
             borderRadius={3}
             borderWidth={1}
             width={200}

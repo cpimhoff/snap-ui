@@ -19,6 +19,21 @@ export const StackAlign = {
   baseline: 'baseline',
 };
 
+/**
+ * <Stack/> defines a horizontal or veritical series of components.
+ *
+ * Stacks lay out their children via flexbox, but keep the definitions
+ * in code instead of pushing them out to CSS.
+ *
+ * <Stack/> work seemlessly with <Box/> and <Spacer/>. They can deliver
+ * effects like rounding the corners of the stack without worrying about
+ * the individual corners of each individual item, or create flexible
+ * gaps without fuss.
+ *
+ * You can use <HStack/> for horizontal arrangements and <VStack/> for
+ * vertical ones. <RStack/> is a responsive stack, and will render as an
+ * <HStack/> on large displays, and a <VStack/> on smaller displays.
+ */
 function Stack({
   children,
   isHorizontal,

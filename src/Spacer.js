@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {unpackPadding} from './util';
 
-export function Padding({padding, children}) {
+function Padding({padding, children}) {
   return (
     <div
       style={{
@@ -14,7 +15,7 @@ export function Padding({padding, children}) {
   );
 }
 
-export function Gap({height, width}) {
+function Gap({height, width}) {
   return (
     <div
       style={{
@@ -26,7 +27,7 @@ export function Gap({height, width}) {
   );
 }
 
-export function FlexGap() {
+function FlexGap() {
   return (
     <div
       style={{
@@ -38,6 +39,16 @@ export function FlexGap() {
   );
 }
 
+/**
+ * <Spacer/> is a simlpe UI primitive to help specify whitespace as
+ * components instead of pushing margin/padding definitions to CSS.
+ *
+ * <Spacer/> can be used with children to create padding around the
+ * children, or used with no children to create margins and gaps.
+ *
+ * <Spacer/> can be used inside of Stack components with no props
+ * to automatically take up as much space as possible.
+ */
 export function Spacer({
   h = 0,
   v = 0,
@@ -67,4 +78,15 @@ export function Spacer({
       </Padding>
     );
   }
+}
+
+
+Spacer.propTypes = {
+  h: PropTypes.number,
+  v: PropTypes.number,
+  top: PropTypes.number,
+  bottom: PropTypes.number,
+  left: PropTypes.number,
+  right: PropTypes.number,
+  children: PropTypes.node,
 }
