@@ -45,6 +45,7 @@ function Stack({
   fill = false,
   width,
   height,
+  style,
   ...rest
 }) {
   const borderRadii = unpackBorderRadii(borderRadius);
@@ -103,10 +104,11 @@ function Stack({
           [StackAlign.baseline]: 'baseline',
         }[align],
         flexWrap: wrap ? 'wrap' : 'nowrap',
+        maxWidth: width,
+        maxHeight: height,
+        ...style,
       }}
       borderRadius={borderRadius}
-      maxWidth={width}
-      maxHeight={height}
       {...rest}
     >
       {boxedChildren}

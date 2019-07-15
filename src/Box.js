@@ -24,6 +24,10 @@ export function Box({
   style,
   inline,
   className,
+  backgroundColor,
+  flexGrow,
+  width,
+  height,
   ...rest
 }) {
   const paddings = unpackPadding(padding);
@@ -40,10 +44,14 @@ export function Box({
         borderWidth,
         ...borderRadii,
         boxShadow,
+        backgroundColor,
+        flexGrow,
         display: inline ? 'inline-block' : 'block',
+        width,
+        height,
         ...style,
-        ...rest,
       }}
+      {...rest}
     >
       {children}
     </div>

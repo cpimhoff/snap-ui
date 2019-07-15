@@ -23,8 +23,8 @@ class Demo extends Component {
         <h2>Boxes</h2>
         <Box>This is a box primitive with no style.</Box>
 
-        <SimpleBox borderWidth={1} borderColor="blue">
-          This is a box primitive with some simple padding and a border
+        <SimpleBox borderWidth={1} borderColor="blue" onClick={() => alert('Ah!')}>
+          This is a box primitive with some simple padding and a border. It also alerts on click!
         </SimpleBox>
 
         <Spacer v={10}>
