@@ -50,6 +50,7 @@ function FlexGap() {
  * to automatically take up as much space as possible.
  */
 export function Spacer({
+  u = 0,
   h = 0,
   v = 0,
   top = 0,
@@ -59,8 +60,8 @@ export function Spacer({
   children,
 }) {
   if (React.Children.count(children) === 0) {
-    if (h || v || top || bottom || left || right) {
-      return <Gap height={v || top + bottom} width={h || left + right} />;
+    if (u || h || v || top || bottom || left || right) {
+      return <Gap height={u || v || top + bottom} width={u || h || left + right} />;
     } else {
       return <FlexGap />;
     }
@@ -68,10 +69,10 @@ export function Spacer({
     return (
       <Padding
         padding={{
-          top: v || top,
-          bottom: v || bottom,
-          left: h || left,
-          right: h || right,
+          top: u || v || top,
+          bottom: u || v || bottom,
+          left: u || h || left,
+          right: u || h || right,
         }}
       >
         {children}
@@ -82,6 +83,7 @@ export function Spacer({
 
 
 Spacer.propTypes = {
+  u: PropTypes.number,
   h: PropTypes.number,
   v: PropTypes.number,
   top: PropTypes.number,
