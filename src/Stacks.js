@@ -34,7 +34,7 @@ export const StackAlign = {
  * vertical ones. <RStack/> is a responsive stack, and will render as an
  * <HStack/> on large displays, and a <VStack/> on smaller displays.
  */
-function Stack({
+export function Stack({
   children,
   isHorizontal,
   borderRadius,
