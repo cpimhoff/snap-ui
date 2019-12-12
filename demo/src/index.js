@@ -18,7 +18,7 @@ const SimpleBox = props => (
 class Demo extends Component {
   render() {
     return (
-      <div>
+      <Box style={{fontFamily: "sans-serif"}}>
         <h1>snap-ui Demo</h1>
         <h2>Boxes</h2>
         <Box>This is a box primitive with no style.</Box>
@@ -119,7 +119,7 @@ class Demo extends Component {
             <Box>Canada</Box>
           </VStack>
         </VStack>
-      </div>
+      </Box>
     );
   }
 }
