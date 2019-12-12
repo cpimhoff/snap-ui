@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 import PropTypes from 'prop-types';
 
 import {unpackBorderRadii, unpackPadding, unpackShadow} from './util';
@@ -13,7 +13,7 @@ import {unpackBorderRadii, unpackPadding, unpackShadow} from './util';
  * <Box/> also has shorthands for very common funtions. `shadow`,
  * for example, or `inline` to set the display to `inline-block`.
  */
-export function Box({
+export const Box = forwardRef(({
   padding,
   children,
   textColor,
@@ -29,7 +29,7 @@ export function Box({
   width,
   height,
   ...rest
-}) {
+}, fwdRef) => {
   const paddings = unpackPadding(padding);
   const borderRadii = unpackBorderRadii(borderRadius);
   const boxShadow = unpackShadow(shadow);
@@ -51,12 +51,13 @@ export function Box({
         height,
         ...style,
       }}
+      ref={fwdRef}
       {...rest}
     >
       {children}
     </div>
   );
-}
+});
 
 Box.propTypes = {
   padding: PropTypes.oneOfType([
