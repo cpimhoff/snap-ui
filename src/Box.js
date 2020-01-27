@@ -95,15 +95,22 @@ Box.propTypes = {
 //
 // This component should only be needed internally.
 export function WrapBox({children, ...props}) {
+  // This feature, which backs a few nice tricks with border radius
+  // modified stacks is temporarily disabled as it caused lots of 
+  // layout regressions in consumer apps after a bug was introduced here.
+  return children;
+
+  /**
   const childrenArray = React.Children.toArray(children);
   if (childrenArray.length != 1) {
     return <Box children={children} {...props} />;
   }
 
   const Child = childrenArray[0];
-  if (Child.type) {
+  if (Child.type && Child.type.propTypes && Child.type.propTypes.borderRadius) {
     return React.cloneElement(Child, {...props, ...Child.props});
   } else {
-    return <Box children={children} {...props} />;
+    return children;
   }
+   */
 }
